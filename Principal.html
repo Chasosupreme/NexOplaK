@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexOplak - Principal</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      display: flex;
+      background-color: #121212;
+      color: white;
+    }
+
+    /* Menú lateral */
+    .sidebar {
+      width: 220px;
+      background: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.5);
+    }
+
+    .sidebar h2 {
+      margin-bottom: 30px;
+      color: #00aaff;
+      text-align: center;
+    }
+
+    .sidebar button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 16px;
+      padding: 10px;
+      text-align: left;
+      cursor: pointer;
+      margin-bottom: 10px;
+      transition: 0.3s;
+    }
+
+    .sidebar button:hover {
+      background: #00aaff;
+      border-radius: 6px;
+    }
+
+    /* Contenido */
+    .content {
+      flex: 1;
+      padding: 30px;
+    }
+
+    .content h1 {
+      color: #00aaff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Menú lateral -->
+  <div class="sidebar">
+    <h2>NexOplak</h2>
+    <button onclick="mostrar('productos')">Productos</button>
+    <button onclick="mostrar('contacto')">Contáctanos</button>
+    <button onclick="mostrar('info')">Sobre Nosotros</button>
+  </div>
+
+  <!-- Contenido -->
+  <div class="content" id="contenido">
+    <h1>Productos</h1>
+    <p>Aquí aparecerán los programas gratis y de pago.</p>
+  </div>
+
+  <script>
+    function mostrar(seccion) {
+      let contenido = document.getElementById("contenido");
+
+if (seccion === "productos") {
+  contenido.innerHTML = `
+    <div style="background:#111; color:#eee; padding:20px; border-radius:12px; box-shadow:0 0 12px rgba(0,0,0,0.6);">
+      <h1 style="color:#00d9ff; text-align:center;">Nuestros Productos</h1>
+      <p style="text-align:center;">Herramientas prácticas creadas para hacer tu vida más sencilla.</p>
+
+      <!-- Advertencia sobre Windows -->
+      <div style="background:#222; color:#ffcc00; padding:10px; border-radius:8px; margin:15px 0; text-align:center;">
+        ⚠️ Windows puede mostrar una alerta de "desarrollador desconocido" al abrir Limpieza.exe. Esto es normal porque el programa no tiene firma digital.
+      </div>
+      
+      <div style="margin-top:20px;">
+        <h2 style="color:#4caf50;">🧹 Limpieza NexOplak</h2>
+        <p><strong>Gratis:</strong> Organiza automáticamente tus carpetas.</p>
+        <ul>
+          <li>Clasifica imágenes, documentos, excels, música y videos.</li>
+          <li>Crea subcarpetas por tipo de archivo.</li>
+          <li>Mueve cada archivo a su lugar correcto.</li>
+        </ul>
+        <!-- Botón de descarga -->
+        <div style="text-align:center; margin-top:15px;">
+          <a href="./limpieza.exe" download style="background:#4caf50; color:#fff; padding:10px 20px; border-radius:8px; text-decoration:none; font-weight:bold;">Descargar Limpieza.exe</a>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+
+
+      else if(seccion === "info") {
+  contenido.innerHTML = `
+    <div style="background:#111; color:#eee; padding:20px; border-radius:12px; box-shadow:0 0 12px rgba(0,0,0,0.6);">
+      <h1 style="color:#00d9ff; text-align:center;">Sobre Nosotros</h1>
+      <p><strong style="color:#00ff95;">NexOplak</strong> es un proyecto independiente creado para compartir y vender software de calidad. 
+      Actualmente está en desarrollo por un único creador apasionado por la programación y el aprendizaje constante.</p>
+      
+      <h2 style="color:#ff6f91;">Misión</h2>
+      <p>Brindar soluciones de software innovadoras, accesibles y útiles que ayuden a estudiantes, emprendedores y curiosos de la tecnología.</p>
+      
+      <h2 style="color:#fddb3a;">Visión</h2>
+      <p>Convertirse en una plataforma reconocida en Colombia y Latinoamérica por su aporte en el desarrollo de programas prácticos, creativos y confiables.</p>
+      
+      <h2 style="color:#8c52ff;">Valores</h2>
+      <ul style="list-style:none; padding:0;">
+        <li>✨ Innovación constante</li>
+        <li>🌍 Accesibilidad para todos</li>
+        <li>⚡ Compromiso con la calidad</li>
+        <li>🤝 Transparencia en cada producto</li>
+      </ul>
+      
+      <h2 style="color:#ffb400;">Modelos de Programas</h2>
+      <p>Cada programa contará con dos versiones:</p>
+      <ul style="list-style:none; padding:0;">
+        <li>🆓 <strong>Versión Gratuita:</strong> todas las funciones habilitadas pero con un tiempo de uso limitado.</li>
+        <li>💎 <strong>Versión Premium:</strong> acceso completo e ilimitado a las funciones sin restricciones de tiempo.</li>
+      </ul>
+    </div>
+  `;
+}
+
+else if(seccion === "contacto") {
+  contenido.innerHTML = `
+    <div style="background:#111; color:#eee; padding:20px; border-radius:12px; box-shadow:0 0 12px rgba(0,0,0,0.6); text-align:center;">
+      <h1 style="color:#00d9ff;">📩 Contáctanos</h1>
+      <p>Puedes escribirnos o seguirnos en nuestras redes:</p>
+      <p><strong>Email:</strong> <a href="mailto:nexoplak@gmail.com" style="color:#00ff95;">nexoplak@gmail.com</a></p>
+      <p><strong>Instagram:</strong> <a href="https://instagram.com/nexoplak" target="_blank" style="color:#fddb3a;">@nexoplak</a></p>
+    </div>
+  `;
+}
+      else if(seccion === "info") {
+  contenido.innerHTML = `
+    <h1>Sobre Nosotros</h1>
+    <p><strong>NexOplak</strong> es un proyecto independiente creado para compartir y vender software de calidad. 
+    Actualmente está en desarrollo por un único creador apasionado por la programación y el aprendizaje constante.</p>
+    
+    <h2>Misión</h2>
+    <p>Brindar soluciones de software innovadoras, accesibles y útiles que ayuden a estudiantes, emprendedores y curiosos de la tecnología.</p>
+    
+    <h2>Visión</h2>
+    <p>Convertirse en una plataforma reconocida en Colombia y Latinoamérica por su aporte en el desarrollo de programas prácticos, creativos y confiables.</p>
+    
+    <h2>Valores</h2>
+    <ul>
+      <li>Innovación constante</li>
+      <li>Accesibilidad para todos</li>
+      <li>Compromiso con la calidad</li>
+      <li>Transparencia en cada producto</li>
+    </ul>
+    
+    <h2>Modelos de Programas</h2>
+    <p>Cada programa contará con dos versiones:</p>
+    <ul>
+      <li><strong>Versión Gratuita:</strong> con todas las funciones habilitadas pero con un tiempo de uso limitado.</li>
+      <li><strong>Versión Premium:</strong> acceso completo e ilimitado a las funciones sin restricciones de tiempo.</li>
+    </ul>
+    
+    <p>La meta es que cualquiera pueda probar nuestras creaciones, y que quienes deseen usarlas a largo plazo apoyen el proyecto adquiriendo la versión premium.</p>
+  `;
+}
+    }
+  </script>
+</body>
+</html>
